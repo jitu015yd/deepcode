@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Deep_code - Custom software and AI automation for technical founders and operations-heavy businesses">
+    <title>Deep_code - Custom Development Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            padding: 80px 0;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .logo-side {
+            flex-shrink: 0;
+        }
+
+        .text-side {
+            flex: 1;
+        }
+
+        .logo-img {
+            max-width: 280px;
+            height: auto;
+            filter: drop-shadow(0 5px 20px rgba(0, 217, 255, 0.4));
+        }
+
+        .hero-headline {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #fff;
+            letter-spacing: 0.5px;
+            text-align: left;
+            line-height: 1.2;
+        }
+
+        .hero-subline {
+            font-size: 1.2rem;
+            color: #b8b8b8;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: #00d9ff;
+            color: #1a1a2e;
+            padding: 14px 32px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .hero-cta:hover {
+            background: #00b8d4;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #1a1a2e;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 60px;
+            font-size: 1.1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: #f8f9fa;
+            padding: 40px 30px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.2);
+            border-color: #00d9ff;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: #1a1a2e;
+        }
+
+        .service-outcome {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .service-card p.usefulness {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid #e0e0e0;
+            font-size: 0.95rem;
+        }
+
+        /* Value Proposition Section */
+        .value-prop {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .value-card {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #1a1a2e;
+        }
+
+        .value-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .trust-anchor {
+            max-width: 700px;
+            margin: 40px auto 0;
+            padding: 30px;
+            background: #fff;
+            border-radius: 8px;
+            border-left: 4px solid #00d9ff;
+        }
+
+        .trust-anchor h4 {
+            font-size: 1.1rem;
+            color: #1a1a2e;
+            margin-bottom: 12px;
+        }
+
+        .trust-anchor p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .quote-section {
+            max-width: 900px;
+            margin: 40px auto 0;
+            text-align: center;
+        }
+
+        .quote-section blockquote {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: #1a1a2e;
+            line-height: 1.8;
+            padding: 40px;
+            background: #fff;
+            border-radius: 10px;
+            border-left: 5px solid #00d9ff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+        }
+
+        .contact .section-title {
+            color: #fff;
+        }
+
+        .contact .section-subtitle {
+            color: #a0a0a0;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #e0e0e0;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #00d9ff;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-group select {
+            color: #fff;
+        }
+
+        .form-group select option {
+            background: #1a1a2e;
+            color: #fff;
+        }
+
+        .submit-btn {
+            background: #00d9ff;
+            color: #1a1a2e;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #00b8d4;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 217, 255, 0.4);
+        }
+
+        .submit-btn:disabled {
+            background: #666;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-reassurance {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #a0a0a0;
+            line-height: 1.6;
+        }
+
+        .form-reassurance strong {
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f0f1e;
+            color: #a0a0a0;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        .privacy-note {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 15px;
+            line-height: 1.5;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 500px;
+            margin: 20px;
+        }
+
+        .modal-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 15px;
+            color: #1a1a2e;
+        }
+
+        .modal-content p {
+            color: #666;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .modal-content .next-steps {
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .modal-btn {
+            background: #00d9ff;
+            color: #1a1a2e;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 15px;
+        }
+
+        .modal-btn:hover {
+            background: #00b8d4;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .logo-img {
+                max-width: 180px;
+            }
+
+            .hero-headline {
+                font-size: 1.8rem;
+                text-align: center;
+            }
+
+            .hero-subline {
+                font-size: 1rem;
+                text-align: center;
+            }
+
+            .text-side {
+                text-align: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 30px 20px;
+            }
+
+            .quote-section blockquote {
+                font-size: 1.1rem;
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-side">
+                    <img src="deepCode_logo.png" alt="Deep_Code Logo" class="logo-img" loading="eager">
+                </div>
+                <div class="text-side">
+                    <h1 class="hero-headline">Turn operational chaos into systems that scale</h1>
+                    <p class="hero-subline">Custom software and AI workflows for founders tired of manual work.</p>
+                    <a href="#contact" class="hero-cta">Request a Technical Review</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">What We Build</h2>
+            <p class="section-subtitle">Focused engineering for high-leverage systems</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>AI Automation & Workflow Orchestration</h3>
+                    <p class="service-outcome">Your team stays in flow. The system handles the friction.</p>
+                    <p>We don't just "automate" tasks; we orchestrate entire business lifecycles. By integrating LLMs and agentic workflows into your existing stack, we turn manual bottlenecks into self-correcting pipelines.</p>
+                    <p class="usefulness"><strong>Result:</strong> Eliminates human error in repetitive tasks, scales operations without headcount, keeps your team focused on high-value work.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🛠️</div>
+                    <h3>Custom Internal Business Tools</h3>
+                    <p class="service-outcome">Software that matches your workflow—not the other way around.</p>
+                    <p>Stop fighting with off-the-shelf software that only does 60% of what you need. We build bespoke internal portals, CRM extensions, and resource management tools designed for your team's unique logic.</p>
+                    <p class="usefulness"><strong>Result:</strong> High user adoption, centralized data, no more "Excel hell" in your daily operations.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔌</div>
+                    <h3>Bots, Dashboards & API Integrations</h3>
+                    <p class="service-outcome">Single source of truth. Real-time visibility.</p>
+                    <p>Whether it's a Slack bot that pulls real-time reports, a custom executive dashboard, or a complex API bridge between legacy systems and modern apps—we make sure your data is where you need it, when you need it.</p>
+                    <p class="usefulness"><strong>Result:</strong> You stop guessing and start knowing. Decision-making becomes data-driven, not gut-driven.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Data Processing & Decision-Support Systems</h3>
+                    <p class="service-outcome">Evidence-based recommendations, not spreadsheet overload.</p>
+                    <p>We build systems that sift through massive datasets to highlight what matters. Our decision-support tools use predictive modeling and advanced processing to help leadership make informed, high-stakes calls.</p>
+                    <p class="usefulness"><strong>Result:</strong> Reduces decision fatigue. Instead of 10,000 rows, you see actionable insights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="value-prop">
+        <div class="container">
+            <h2 class="section-title">Why Custom Over Cloud-Standard?</h2>
+            
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-icon">⚡</div>
+                    <h3>Zero Bloat</h3>
+                    <p>You only pay for features you actually use. Lightweight architecture means fast performance and low maintenance.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">🔒</div>
+                    <h3>Security First</h3>
+                    <p>Built with data privacy as a foundation. Secure integrations, compliance-ready from day one.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">📈</div>
+                    <h3>Built to Scale</h3>
+                    <p>We architect for your next 10,000 users or transactions—not just today's needs.</p>
+                </div>
+            </div>
+
+            <div class="trust-anchor">
+                <h4>Founder-Led Development</h4>
+                <p>Deep_code is built for Indian SMEs and operations-heavy businesses. We're engineers who understand the unique constraints of growing teams—limited budgets, complex legacy systems, and the need for practical solutions over enterprise bloat. No outsourcing layers. Direct communication with the people building your system.</p>
+            </div>
+
+            <div class="quote-section">
+                <blockquote>
+                    "If you can describe the logic, we can build the code. Deep_code takes the complexity out of your backend so you can focus on the front of your business."
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Talk Systems</h2>
+            <p class="section-subtitle">Tell us what's broken. We'll propose what's possible.</p>
+            
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="Your name" aria-label="Your full name" aria-required="true">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required placeholder="your@email.com" aria-label="Your email address" aria-required="true">
+                </div>
+
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company" placeholder="Your company name" aria-label="Company name">
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Service Interested In</label>
+                    <select id="service" name="service" aria-label="Service you're interested in">
+                        <option value="">Select a service</option>
+                        <option value="ai-automation">AI Automation & Workflow Orchestration</option>
+                        <option value="business-tools">Custom Internal Business Tools</option>
+                        <option value="bots-apis">Bots, Dashboards & API Integrations</option>
+                        <option value="data-processing">Data Processing & Decision-Support Systems</option>
+                        <option value="other">Other / Multiple Services</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">What are you trying to solve? *</label>
+                    <textarea id="message" name="message" required placeholder="Describe your current bottleneck or what you're trying to achieve..." aria-label="Project details" aria-required="true"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">Send Technical Inquiry</button>
+
+                <div class="form-reassurance">
+                    <strong>What happens next:</strong><br>
+                    A Deep_code engineer (not a sales rep) will review your inquiry and respond within 24 hours. We don't send spam. Your information is used only to discuss your project.
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Deep_code. Sophisticated Code. Simple Operations.</p>
+            <p class="privacy-note">
+                We do not store or share your data. Submissions are used only to respond to your inquiry.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+        <div class="modal-content">
+            <div class="modal-icon">✅</div>
+            <h2 id="modalTitle">Inquiry Received</h2>
+            <p id="modalDesc">We've got your message. An engineer from Deep_code will review your inquiry and respond within 24 hours.</p>
+            <p class="next-steps">Check your inbox (and spam folder) for our reply. We'll propose next steps based on what you've shared.</p>
+            <button class="modal-btn" onclick="closeModal()" aria-label="Close confirmation">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                company: document.getElementById('company').value,
+                service: document.getElementById('service').value,
+                message: document.getElementById('message').value,
+                timestamp: new Date().toISOString()
+            };
+
+            try {
+                await simulateSubmission(formData);
+                document.getElementById('successModal').classList.add('show');
+                document.getElementById('contactForm').reset();
+                
+            } catch (error) {
+                alert('There was an error sending your message. Please try again or email us directly.');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }
+        });
+
+        function simulateSubmission(data) {
+            return new Promise((resolve) => {
+                console.log('Form submitted:', data);
+                setTimeout(resolve, 1000);
+            });
+        }
+
+        function closeModal() {
+            document.getElementById('successModal').classList.remove('show');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        document.getElementById('successModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Smooth scroll for CTA button
+        document.querySelector('.hero-cta').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
